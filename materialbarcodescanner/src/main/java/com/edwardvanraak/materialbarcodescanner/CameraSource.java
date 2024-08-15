@@ -1070,24 +1070,24 @@ public class CameraSource {
          */
         @SuppressLint("Assert")
         void release() {
-            // assert (mProcessingThread.getState() == State.TERMINATED);
-            // mDetector.release();
-            // mDetector = null;
+            assert (mProcessingThread.getState() == State.TERMINATED);
+            mDetector.release();
+            mDetector = null;
             
-            if (mProcessingThread != null) {
-                assert (mProcessingThread.getState() == Thread.State.TERMINATED);
-            } else {
-                Log.e("MaterialBarcodeScannerActivity", "mProcessingThread is null");
-                // Handle the null case, perhaps by throwing an exception or simply returning
-            return;
-            }
+            // if (mProcessingThread != null) {
+            //     assert (mProcessingThread.getState() == Thread.State.TERMINATED);
+            // } else {
+            //     Log.e("MaterialBarcodeScannerActivity", "mProcessingThread is null");
+            //     // Handle the null case, perhaps by throwing an exception or simply returning
+            // return;
+            // }
     
-            if (mDetector != null) {
-                mDetector.release();
-                mDetector = null;
-            } else {
-                Log.e("MaterialBarcodeScannerActivity", "mDetector is already null");
-            }
+            // if (mDetector != null) {
+            //     mDetector.release();
+            //     mDetector = null;
+            // } else {
+            //     Log.e("MaterialBarcodeScannerActivity", "mDetector is already null");
+            // }
 
 
             
